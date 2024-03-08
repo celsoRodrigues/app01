@@ -7,6 +7,7 @@ import (
 	"app01/cmd"
 )
 
+// majorVersion is set via ldflags, during build
 var majorVersion string
 
 func main() {

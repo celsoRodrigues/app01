@@ -4,8 +4,6 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"os"
-
 	"github.com/spf13/cobra"
 )
 
@@ -22,7 +20,6 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		rootCmd.SetArgs([]string{"--version"})
 		rootCmd.Execute()
-		os.Exit(0)
 	},
 }
 

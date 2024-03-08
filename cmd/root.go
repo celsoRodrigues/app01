@@ -36,8 +36,9 @@ func Execute() {
 	}
 }
 
-func AddVersion(v string) {
-	var commit = func() string {
+func AddVersion(v string) bool {
+	var sep string
+	commit := func() string {
 		if info, ok := debug.ReadBuildInfo(); ok {
 			for _, setting := range info.Settings {
 				if setting.Key == "vcs.revision" {
@@ -45,9 +46,13 @@ func AddVersion(v string) {
 				}
 			}
 		}
-		return ""
+		return "000"
 	}()
-	rootCmd.Version = fmt.Sprintf("%s.%s", v, commit)
+	if len(v) > 0 {
+		sep = "."
+	}
+	rootCmd.Version = fmt.Sprintf("%s%s%s", v, sep, commit)
+	return len(commit) != 0
 }
 
 func init() {
@@ -59,5 +64,5 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	//rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
