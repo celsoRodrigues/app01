@@ -1,0 +1,10 @@
+# directories
+bin
+releases
+
+# files
+
+# Ignore vim files:
+*~
+*.swp
+*.swo
