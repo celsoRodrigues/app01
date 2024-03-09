@@ -12,7 +12,7 @@ import (
 // majorVersion is set via ldflags, during build
 var majorVersion string
 
-//go:embed templates
+//go:embed setup/templates
 var templatesFs embed.FS
 
 func main() {

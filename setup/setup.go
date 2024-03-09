@@ -6,6 +6,6 @@ import (
 )
 
 func NewTemplates(templatesFs embed.FS) *template.Template {
-	t := template.Must(template.New("").ParseFS(templatesFs, "templates/*.tpl"))
+	t := template.Must(template.New("").ParseFS(templatesFs, "setup/templates/*.tpl"))
 	return t
 }
