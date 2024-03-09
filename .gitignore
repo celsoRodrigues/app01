@@ -2,9 +2,9 @@
 bin
 releases
 
-# files
+# files:
 
-# Ignore vim files:
+# Ignore vim files
 *~
 *.swp
 *.swo
