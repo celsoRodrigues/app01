@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 	"runtime/debug"
+	"text/template"
 
 	"github.com/spf13/cobra"
 )
@@ -55,7 +56,13 @@ func AddVersion(v string) bool {
 	return len(commit) != 0
 }
 
+func AddConfigTemplates(t *template.Template) {
+	rootCmd.AddCommand(createSetupCmd(t))
+
+}
+
 func init() {
+
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
